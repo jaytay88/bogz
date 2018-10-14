@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Main Blog Page</h1>
+
+{% if blog_names|length == 0 %}
+    <p>No blogs yet</p>
+    {% else %}
+
+        <ul>
+            {% for blog_name in blog_names %}
+            <li>{{blog_name.blog_name}}</li>
+            {% endfor %}
+        </ul>
+        <ul>
+            {% for blog_entry in blog_entries %}
+            <li>{{blog_entry.blog_entry}}</li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+{% endblock %}
