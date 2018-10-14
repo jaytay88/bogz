@@ -39,6 +39,7 @@ def new_post():
         new_blog = Blog(blog_name, blog_entry)
         db.session.add(new_blog)
         db.session.commit()
+        return redirect('/blog')
 
     blog_names = Blog.query.all()
     blog_entries = Blog.query.all()
