@@ -1,20 +1,12 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<h1 style="text-align: center;">Main Blog Page</h1>
+{% if blogs %}
+    {% for blog in blogs %}
+        <p><a href ="./blog?id={{ blog.id }}" style="font-size:150%"> {{ blog.blog_name }} </a> 
+            <div>{{ blog.blog_entry }}</div>
+        </p>
+    {% endfor %}
+{% endif %}
 
-{% if blog_names|length == 0 %}
-    <p>No blogs yet</p>
-    {% else %}
-
-        <ul style="list-style: none;">
-            {% for blog_name in blog_names %}
-            <li><h1>{{blog_name.blog_name}}</h1>
-                <p>{{blog_name.blog_entry}}</p></li>
-                <hr />
-            {% endfor %}
-        </ul>
-    
-    {% endif %}
 {% endblock %}

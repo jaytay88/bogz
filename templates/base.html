@@ -4,9 +4,12 @@
         <title>{{title}}</title>
     </head>
 <body>
-<nav>
     
-    <a href="/blog">Main Blog Page</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="/newpost">New Blog Post</a>
+<span><a href="/blog">Main Blog Page</a></span>&nbsp;&nbsp;&nbsp;
+<span><a href="/newpost">Add a Blog Entry</a></span>
+
+<div align="center"><h1>{{title}}</h1></div>
+
 
     {% block content %}
     {% endblock %}
