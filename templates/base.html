@@ -33,29 +33,39 @@
       padding: 10px 5px;
       }
 
+    body {
+      background-color: darkslategray;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-align: center;
+    }
+
+    a {
+      color: lightskyblue;
+    }
+
+    .error {
+      color: red;
+    }
 
     </style>
   </head>
 
   <body>
-
-    <div class="container">
-
-      <nav class="header">
-
-        <h1 class="title"><a href="/">Blogz!</a></h1>
+      <nav>
         <ul class="nav_bar">
+          <li><a href="/login">Login</a></li>
           <li><a href="/signup">Sign Up</a></li>
           <li><a href="/blog">View All Posts</a></li>
           <li><a href="/newpost">New Post</a></li>
           <li><a href="/logout">Logout</a></li>
-          <li><a href="/login">Login</a></li>
         </ul>
       </nav>
+      <h1 class="title"><a href="/">Blogz!</a></h1>
+
       {% block content %}
       {% endblock %}
-    </div>
 
-  </body>
+    </body>
 
 </html>

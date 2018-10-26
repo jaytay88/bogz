@@ -1,6 +1,5 @@
 from flask import Flask, request, redirect, render_template, session
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
 
 app = Flask(__name__)
 app.config['DEBUG'] = True
@@ -89,7 +88,7 @@ def signup():
             verify_error = "Passwords do not match."
         if exist:
             username_error = "Username already taken."
-        # If fields are good, continue to creating session with new username and password.
+
         if len(username) > 3 and len(password) > 3 and password == verify and not exist:
             new_user = User(username, password)
             db.session.add(new_user)
